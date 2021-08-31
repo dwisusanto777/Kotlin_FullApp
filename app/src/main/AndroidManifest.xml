@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Course3KotlinMVPBangunDatar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.ReactiveProgrammingActivity"></activity>
+        <activity android:name=".pagingNews.PagingMainActivity"></activity>
+        <activity android:name=".view.ReactiveProgrammingActivity" />
         <activity android:name=".view.DashboardActivity" />
         <activity android:name=".splash.SplashScreenActivity">
             <intent-filter>

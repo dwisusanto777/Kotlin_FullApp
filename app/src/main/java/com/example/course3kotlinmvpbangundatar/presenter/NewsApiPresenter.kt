@@ -14,7 +14,6 @@ class NewsApiPresenter(val news : NewsApiView) {
         var service = RetrofitInstance.getInstance("https://newsapi.org/v2/").create(NewsApiService::class.java)
         service.getData().enqueue(object : Callback<ResponseNews> {
             override fun onResponse(call: Call<ResponseNews>, response: Response<ResponseNews>) {
-                TODO("Not yet implemented")
                 if(response.isSuccessful){
                     val dataNews = response.body()?.articles
                     if(dataNews?.size?:0>0){
@@ -24,7 +23,6 @@ class NewsApiPresenter(val news : NewsApiView) {
                     }
                 }
             }
-
             override fun onFailure(call: Call<ResponseNews>, t: Throwable) {
                 news.onError(t.localizedMessage)
             }
