@@ -17,5 +17,8 @@ class NewsDataFactory : DataSource.Factory<Long, ArticlesItem>() {
         return newsDataSource
     }
 
-    fun get
+    @JvmName("getMutableLiveData1")
+    fun getMutableLiveData():MutableLiveData<NewsDataSource>{
+        return mutableLiveData
+    }
 }

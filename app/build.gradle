@@ -75,6 +75,7 @@ dependencies {
     def lifecycle_version = "2.4.0-alpha03"
     def arch_version = "2.1.0"
     // ViewModel
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
     // LiveData
     implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"

@@ -1,5 +1,6 @@
 package com.example.course3kotlinmvpbangundatar.model.gsonArticle
 
+import androidx.recyclerview.widget.DiffUtil
 import com.google.gson.annotations.SerializedName
 
 data class ResponseNews(
@@ -47,5 +48,17 @@ data class ArticlesItem(
 	val url: String? = null,
 
 	@field:SerializedName("content")
-	val content: String? = null
+	val content: String? = null,
+
+
+	var DIFF_CALLBACK: DiffUtil.ItemCallback<ArticlesItem> = object : DiffUtil.ItemCallback<ArticlesItem>(){
+		override fun areItemsTheSame(oldItem: ArticlesItem, newItem: ArticlesItem): Boolean {
+			return oldItem.title == newItem.title
+		}
+
+		override fun areContentsTheSame(oldItem: ArticlesItem, newItem: ArticlesItem): Boolean {
+			return oldItem.equals(newItem)
+		}
+
+	}
 )
